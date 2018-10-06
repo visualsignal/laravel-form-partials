@@ -1,0 +1,24 @@
+{
+    "name": "visualsignal/laravel-form-partials",
+    "description": "Form partials to be included with Laravel projects",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Dave Blencowe",
+            "email": "dblencowe@visualsignal.io"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "src/": "VisualSignal\\FormPartials\\"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "VisualSignal\\FormPartials\\FormPartialsServiceProvider"
+            ]
+        }
+    }
+}
