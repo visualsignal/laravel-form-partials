@@ -8,6 +8,6 @@ class FormPartialsServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->loadViewsFrom('./views/partials/fields', 'FormPartial');
+        $this->loadViewsFrom(__DIR__ . '/views/partials/fields', 'FormPartial');
     }
 }
