@@ -1,5 +1,7 @@
 <div class="form-group {{ $containerClasses or '' }}">
-    <label for="{{ $id or $name }}">{{ $label }}</label>
+    @if(isset($label))
+        <label for="{{ $id or $name }}">{{ $label }}</label>
+    @endif
     <input
             type="{{ $type or 'text' }}"
             name="{{ $name }}"

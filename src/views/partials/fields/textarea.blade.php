@@ -1,5 +1,7 @@
 <div class="form-group {{ $containerClasses or '' }}">
-    <label for="{{ $id or $name }}">{{ $label }}</label>
+    @if(isset($label))
+        <label for="{{ $id or $name }}">{{ $label }}</label>
+    @endif
     <textarea name="{{ $name }}" id="{{ $id or $name }}" class="form-control {{ $inputClasses or '' }}" rows="{{ $rows ?? 10 }}">{{ old($name, isset($value) ? $value : '') }}</textarea>
     @if ($errors->has($name))
         <span class="help-block text-danger">
