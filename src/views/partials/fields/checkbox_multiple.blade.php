@@ -2,7 +2,7 @@
 @foreach($options as $value => $displayName)
 <div class="checkbox">
     <label>
-        <input type="{{ $type or 'checkbox' }}" name="{{ $name }}[]" {{ isset($checked) && $checked ? 'CHECKED ' : '' }} value="{{ $value or '1' }}" {{ isset($disabled) && $disabled ? 'DISABLED' : '' }} class="{{ $classes or '' }}"> {{ $displayName }}
+        <input type="{{ $type or 'checkbox' }}" name="{{ $name }}[]" {{ isset($values) && in_array($value, $values) ? 'CHECKED ' : '' }} value="{{ $value or '1' }}" {{ isset($disabled) && $disabled ? 'DISABLED' : '' }} class="{{ $classes or '' }}"> {{ $displayName }}
     </label>
 </div>
 @endforeach
