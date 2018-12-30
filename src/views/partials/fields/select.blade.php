@@ -8,7 +8,7 @@
             class="form-control {{ $inputClasses or '' }}"
     >
         @if (isset($includeBlank) && $includeBlank)
-            <option value="">---</option>
+            <option value="">{{ $blankOptionText or '---' }}</option>
         @endif
         @foreach($options as $key => $optionValue)
             <option value="{{ $key }}" {{ isset($value) && $key == $value ? 'SELECTED ' : ''}}>{{ $optionValue }}</option>
