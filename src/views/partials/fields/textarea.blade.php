@@ -1,8 +1,8 @@
-<div class="form-group {{ $containerClasses or '' }}">
+<div class="form-group {{ $containerClasses??'' }}">
     @if(isset($label))
-        <label for="{{ $id or $name }}">{{ $label }}</label>
+        <label for="{{ $id??$name }}">{{ $label }}</label>
     @endif
-    <textarea name="{{ $name }}" id="{{ $id or $name }}" class="form-control {{ $inputClasses or '' }}" rows="{{ $rows ?? 10 }}">{{ old($name, isset($value) ? $value : '') }}</textarea>
+    <textarea name="{{ $name }}" id="{{ $id??$name }}" class="form-control {{ $inputClasses??'' }}" rows="{{ $rows ?? 10 }}">{{ old($name, isset($value) ? $value : '') }}</textarea>
     @if ($errors->has($name))
         <span class="help-block text-danger">
             <strong>{{ $errors->first($name) }}</strong>

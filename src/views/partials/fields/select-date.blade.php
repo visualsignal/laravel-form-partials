@@ -1,11 +1,11 @@
-<div class="form-group {{ $containerClasses or '' }}">
-    <label for="{{ $id or $name }}Month">{{ $label }}</label>
+<div class="form-group {{ $containerClasses??'' }}">
+    <label for="{{ $id??$name }}Month">{{ $label }}</label>
     <div class="row">
         <div class="col-xs-6">
             <select
                     name="{{ $name }}Month"
-                    id="{{ $id or $name }}Month"
-                    class="form-control {{ $inputClasses or '' }}"
+                    id="{{ $id??$name }}Month"
+                    class="form-control {{ $inputClasses??'' }}"
             >
                 @if (isset($includeBlank) && $includeBlank)
                     <option value="">---</option>
@@ -19,8 +19,8 @@
         <div class="col-xs-6">
             <select
                     name="{{ $name }}Year"
-                    id="{{ $id or $name }}Year"
-                    class="form-control col-xs-6 {{ $inputClasses or '' }}"
+                    id="{{ $id??$name }}Year"
+                    class="form-control col-xs-6 {{ $inputClasses??'' }}"
             >
                 @if (isset($includeBlank) && $includeBlank)
                     <option value="">---</option>

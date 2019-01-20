@@ -1,14 +1,14 @@
-<div class="form-group {{ $containerClasses or '' }}">
+<div class="form-group {{ $containerClasses??'' }}">
     @if(isset($label))
-        <label for="{{ $id or $name }}">{{ $label }}</label>
+        <label for="{{ $id??$name }}">{{ $label }}</label>
     @endif
     <select
             name="{{ $name }}"
-            id="{{ $id or $name }}"
-            class="form-control {{ $inputClasses or '' }}"
+            id="{{ $id??$name }}"
+            class="form-control {{ $inputClasses??'' }}"
     >
         @if (isset($includeBlank) && $includeBlank)
-            <option value="">{{ $blankOptionText or '---' }}</option>
+            <option value="">{{ $blankOptionText??'---' }}</option>
         @endif
         @foreach($options as $key => $optionValue)
             <option value="{{ $key }}" {{ isset($value) && $key == $value ? 'SELECTED ' : ''}}>{{ $optionValue }}</option>

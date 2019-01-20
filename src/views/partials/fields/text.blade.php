@@ -1,13 +1,13 @@
-<div class="form-group {{ $containerClasses or '' }}">
+<div class="form-group {{ $containerClasses??'' }}">
     @if(isset($label))
-        <label for="{{ $id or $name }}">{{ $label }}</label>
+        <label for="{{ $id??$name }}">{{ $label }}</label>
     @endif
     <input
-            type="{{ $type or 'text' }}"
+            type="{{ $type??'text' }}"
             name="{{ $name }}"
-            id="{{ $id or $name }}"
-            class="form-control {{ $inputClasses or '' }}"
-            placeholder="{{ $placeholder or ''}}"
+            id="{{ $id??$name }}"
+            class="form-control {{ $inputClasses??'' }}"
+            placeholder="{{ $placeholder??''}}"
             value="{{ old($name, isset($value) ? $value : '') }}"
     >
 
