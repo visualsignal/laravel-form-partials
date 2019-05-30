@@ -11,9 +11,9 @@
             value="{{ old($name, isset($value) ? $value : '') }}"
     >
 
-    @if ($errors->has($name))
+    @if (($errorIdentifier = isset($errorIdentifier) ? $errorIdentifier : $name) && $errors->has($errorIdentifier))
         <span class="help-block text-danger">
-            <strong>{{ $errors->first($name) }}</strong>
+            <strong>{{ $errors->first($errorIdentifier) }}</strong>
         </span>
     @endif
 </div>
